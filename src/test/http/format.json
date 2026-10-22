@@ -1,0 +1,21 @@
+/*格式化json快捷键，选中之后：ctrl + alt + L*/
+
+[
+  {
+    "userId": "142",
+    "channelProtocol": "KDB0001"
+  },
+  {
+    "userId": "202",
+    "channelProtocol": "KDB0002"
+  }
+]
+
+{
+  "platformAppId": "SM20261018160002",
+  "sign": "piMMM9juzGCzboE1pjLM12GLSn7PV8+leAetqu+Mz+lVFKw/pUV0jltZlYOXds1P75Ov/+1A+f5Cm3JGhi5WSb/lZcZqvxciBasE11TkznM/HcgxHv7+tABz19d6qWax9ZHChu1xg8ArxVPvMyxFpL2p9NEgmEBi/v48gUe4VzV8Iwhh343Kin+FNzqPA8oHnk82S1YkwcstXI/t8UwP/Xn16JK/khutx2aHiM1kdk9adS1VUy3IFCYPfDwT9V29reDNMIKNTIIGUV+/BTdJl1J707nkxjS8R2JdQcjNGsXUzKm+YZRgDTG7x7V/Q4IOj9fBW81OnVSXKWvYrzSIPg==",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0"
+}
+

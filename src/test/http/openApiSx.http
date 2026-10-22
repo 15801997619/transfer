@@ -1,0 +1,112 @@
+### 查询支付宝商家账户余额(沙箱环境)
+
+POST {{host}}/openApi/queryAccountInfo
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "sign": "piMMM9juzGCzboE1pjLM12GLSn7PV8+leAetqu+Mz+lVFKw/pUV0jltZlYOXds1P75Ov/+1A+f5Cm3JGhi5WSb/lZcZqvxciBasE11TkznM/HcgxHv7+tABz19d6qWax9ZHChu1xg8ArxVPvMyxFpL2p9NEgmEBi/v48gUe4VzV8Iwhh343Kin+FNzqPA8oHnk82S1YkwcstXI/t8UwP/Xn16JK/khutx2aHiM1kdk9adS1VUy3IFCYPfDwT9V29reDNMIKNTIIGUV+/BTdJl1J707nkxjS8R2JdQcjNGsXUzKm+YZRgDTG7x7V/Q4IOj9fBW81OnVSXKWvYrzSIPg==",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0"
+}
+
+### 商家单笔转账(沙箱环境)
+
+POST {{host}}/openApi/uniTransfer
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "outBizNo": "2026102115590001",
+  "sign": "lGjmQij+Jy4lL763o857mRYxLMOdkhyaoT7ipF7KStcVazplPW9uymMGpnYoVQBikDJ/aZCTcrDPQQE0cwxssEHXKuCBCKrv+BkHtjfI+CytfO2N2SpOhdu9qnJgot+IUZGpzUdsp/OOVTcCgfnUFBRwo6zI/vHIwN1KdxESy8yFHCuqOo4bZVCVU2nS59/Nf/ruezUBmmi5qin9sEmKRx2FrK5FovBLdUsCmhYgHf/5mTeqsExyFxrFqE1u3YLxcAF+BJuz92vpfi9LR+6UwC539zCT4B7pjnhuHdZbFmA604StJ+vO8P5Y5ZdSoSNn0YeMyoZfrbPeuVICHlXiAQ==",
+  "bizScene": "DIRECT_TRANSFER",
+  "remark": "沙箱转账备注",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0",
+  "transAmount": "16.5",
+  "transferSceneReportInfos": [
+    {
+      "infoType": "佣金报酬说明",
+      "infoContent": "9月家政服务报酬16.5"
+    }
+  ],
+  "productCode": "TRANS_ACCOUNT_NO_PWD",
+  "businessParams": "{\"payer_show_name_use_alias\":\"true\"}",
+  "payeeInfo": {
+    "identityType": "ALIPAY_USER_ID",
+    "identity": "2088722116565757",
+    "name": "nonooo3625"
+  },
+  "signType": "RSA",
+  "orderTitle": "沙箱测试商家转账202610211559",
+  "transferSceneName": "佣金报酬"
+}
+
+### 转账订单查询(沙箱环境)
+
+POST {{host}}/openApi/queryTransferInfo
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "productCode": "TRANS_ACCOUNT_NO_PWD",
+  "orderId": "20261021110070000002450004582266",
+  "outBizNo": "2026102115590001",
+  "sign": "lmrjasQzTcAFSMv1OeHq/yA1JRg0GuaildQcnpeVdsn/bRAeSYbKbfEEnIY1sdyxIt1SJyln/CCGzTzTpHg54ZE0kbGKrguTdfOQAxYS5oYl1OxiTzj8fRQ++tXu827fZ7+0wd+DpGyGxNfnN3lanW+U0pPuzABdTi9iid69m+Vam3Q79i3yTwRYtRDFPD1Bj/uq4jyiMngsQcQdf0woqydlos8Unw0RMjAopuz8QKnBlDjToYerWG/AEOZdTR1I6tgqcZOnQ5x6Y6lolfPipI0dzMMTLVB2qaXnVv38yapWvtqv0fPZbVTJATefRAKi+I9aplKeHGtAtRNJ8mQYIQ==",
+  "bizScene": "DIRECT_TRANSFER",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "payFundOrderId": "20261021110070001502450004586507",
+  "version": "1.0"
+}
+
+### 申请电子回单(沙箱环境)
+
+POST {{host}}/openApi/applyEreceipt
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "sign": "cPCYB0uq61VXNLB9815jNCpiBpzRbtNYWbhgH9VhgbnzBpRt3FTB+xWNxcCCMF9KUiotwJFQeygvRNiIEHUQDA62fYKhmqD0CezO5sNBd77HHILB5JyCymyiPYsuJX67TZIyqSi6B/Z9MmZGWjngJwiGRqDw0EQLqvLxyIhVrvSc8Y00MgGRo7E5+sjqD4sQPWAPGlWaOviL3ryxnw2RN6YoD+ov4OlxqxJfOFIE2DH/A1xJmXM4m2+zmqBVL2TYmpPh33K+6Lyi2j13HkT8ghBYXORjLkQElnhrVFMAkpQCbBiRlTy7GPKEkw1xfPYn4H+wl3UvVMrJ+EPwmJDqvA==",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "type": "FUND_DETAIL",
+  "version": "1.0",
+  "key": "20261021110070001502450004586507"
+}
+
+### 电子回单状态查询(沙箱环境)
+
+POST {{host}}/openApi/queryEreceipt
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "sign": "S7AFR+n8GMg+GKkzcO9QQpFP+Z+tL9yc3Sc0glKEKgvfvXQ9pVkv2ICjpj//9W9BTwW1tnxet5EUop8hhRORrxMGx5fsLnpJ8D8PGMEeSCOPJou5ZhWIz6vA8uHI47kHIT4sa9OGGuQLCHVOwoG1//g4DC6l636mub9zzmhd8gx+6FS/33hJ4ijOc0C759plCc0hHpgoL4wKRC5W4hv03XUBMRzzqp8dh/TvBWlWRUp1TS9HSzAjf/yhC9VVcYbFC7T0Dt7V/1yZk+5DTvY8TqgYHu2e2BSbd0c5O0VoJ79DAb65TyK44ieEn7BnnOvFlb40hCmlG2t7ojnXDw1Teg==",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0",
+  "fileId": "59900014"
+}
+
+### 查询对账单下载地址(沙箱环境)
+
+POST {{host}}/openApi/queryBillDownloadUrl
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "billType": "signcustomer",
+  "sign": "ZjrHJ2+Wxa0RXd0y4xeqeCy+qvWG4DDbuRhDNkmZXhxCHEPnucfXQg7SqU8++RdeL1wm3GFl/zh83x2sUbOHJzmInaVwo5n5m5ixtQDVkNiC6L5LpXU8zKiX6Mr4XtYn7bQ3QneSoGqFgk+cfc/zRv2bGVDOtKojGUV7PMr6DjMvq8eJbvz3kCLsLO6YvLokhgRD9w2Pb+wDpqDsqMp3oC3LkJTv35O6FKx8ic4H9ht9x35qd52Li1klJipo0Xn4BcVeJeFdJDJu6X3ZbpMqf97Rfw18O7OixKrz7SW5Equ7Vo4SgntnJgxnTWjDpG5H6ScscZwqDYAbgYUJMDbEqA==",
+  "signType": "RSA",
+  "billDate": "2026-10-19",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0"
+}

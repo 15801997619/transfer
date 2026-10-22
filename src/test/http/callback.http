@@ -1,0 +1,18 @@
+
+### KDB回调
+
+POST {{host}}/callback/payOrderCreateCb
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "head": {
+    "localDate": "20240421",
+    "localNo": "936447",
+    "localTime": "155454"
+  },
+  "bizType": "P01",
+  "sign": "heZHutPgu+3KnvGi0n+bHCIjb2jLBR8ITkkOJE6yOd8iqtLImUH5y6RAmZHhu9d36hXXGiMfjn39iq3CAmlv4g==",
+  "encryp": "00",
+  "body": "{\"txtRemark\":\"\",\"payOrderId\":\"XN24042115545357007863\",\"orderId\":\"007U1713686093705BSZRW3fRrxSlqvp\",\"payTime\":\"20240421155454\",\"d0_Fee\":0,\"oldT1Rate\":\"0|0|0|0|0|0|0|0\",\"oldD0Fee\":0,\"merchantName\":\"天津茵曼科技有限公司\",\"srefNo\":\"XN0429401044\",\"t1_Rate\":\"0.3|0|0|0|0|0|0|0\",\"debitDiscountFlag\":\"\",\"transCode\":\"60004\",\"preferType\":\"D\",\"merchantCode\":\"84311315722007U\",\"transTime\":\"20240421155453\",\"authNo\":\"\",\"couponInfo\":\"\",\"d0_Rate\":\"0|0|0|0|0|0|0|0\",\"preferActivityId\":\"\",\"feeType\":\"WECHAT\",\"t1_Fee\":1,\"officeid\":\"50103709342024042137521504453\",\"oldT1Fee\":0,\"oldD0Rate\":\"0|0|0|0|0|0|0|0\",\"preferAmount\":0,\"transState\":\"S\",\"rsn\":\"YQU4P4EN\",\"orderAmount\":2,\"orgCode\":\"202312051141\",\"rewardAmount\":0,\"refundAmt\":0,\"channelCode\":\"202312051141\",\"transMsg\":\"支付成功\",\"amount\":2,\"oldPayOrderId\":\"XN240421XN0429401044\",\"gatewayNo\":\"007U1713686093705BSZRW3fRrxSlqvp\",\"actualAmount\":2,\"payCardAttr\":\"2\",\"posNo\":\"\",\"userId\":\"oNP3rwWliRf7g1tF04unjOmfNT88\",\"cashierd\":\"\",\"terminalCode\":\"26126201\",\"transAction\":\"polyQrcodePayWechat\",\"txnSettType\":\"D1\"}"
+}

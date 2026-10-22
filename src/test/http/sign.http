@@ -1,0 +1,60 @@
+
+### 生成请参签名数据(生产)
+
+POST {{host}}/rsaSign
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160002",
+  "signType": "RSA",
+  "alipayAppId": "9021000169679124",
+  "version": "1.0",
+  "fileId": "59900014",
+  "priKey": "{{partnerPriKey}}"
+}
+
+### 生成请参签名数据(沙箱环境)
+
+POST {{host}}/rsaSign
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "billType": "signcustomer",
+  "billDate": "2026-10-18",
+  "version": "1.0",
+  "platformAppId": "SM20261018160002",
+  "alipayAppId": "9021000169679124",
+  "signType": "RSA",
+  "priKey": "{{partnerPriKey}}"
+}
+
+
+> {%
+    client.global.set("sign", response.body.sign);
+    client.log(response.body.sign);
+    // client.global.set("respData", JSON.stringify(response.body));
+    // client.global.set("respData", response.body);
+    // client.global.set("sign", response.body.json());
+    // client.log(JSON.stringify(response.body));
+    // client.global.set("logNo", response.body.logNo);
+    // client.global.set("appId", response.body.appId);
+    // client.global.set("logNo", response.body.logNo);
+    // client.log(response.body.logNo);
+    // client.log(client.global.get("respData"));
+    // client.log(client.global.get("logNo"));
+%}
+
+### 验签
+POST {{host}}/validateRsaSign
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "availableAmount": "1000000.00",
+  "sign": "aPZ6avgt0vSnjc76OmzeqKSjhvt+RcZ6I6390j3Zk+vXO78vz6TPcl9L0bv+6kaTVj1Yl/Fd/cCi3vD0in2BSlIl/RRQm6DQoVDSiQcyI93mN3rgE9pxvzME+5H3FViHgPDjayZEa/DQE3tb8lYfWh7tdTgrd2XaPKiSOoMZZGt1cZ3QZ6qR+riG2D61rAXYGZUzbfSeZ4HyImwoMJKo3nwBBS52ABTE1qJrR/+zoDIWteeNopX4BPB+xCh+sgrck9Qm/Y0gqbwJvpJ6iS6DMbrcQOIBBag0aFjVL8y/Azp1UAyApFZdA5fEAUBMi0PYLdys1au8huXxBAXG0w1ZMg==",
+  "pubKey": "{{platformPubKey}}"
+}
+
+

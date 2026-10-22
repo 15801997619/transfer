@@ -1,0 +1,13 @@
+### 查询支付宝商家账户余额(生产环境)
+
+POST {{host}}/openApi/queryAccountInfo
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160001",
+  "sign": "OOTeaVLtzVUP6b87vhKUJXg6DpjyVv7dSThQ71kwHogDaNGhqhSYLcKW27EgX9AREcUlCKqyUmAIHMLp/xSYhcgcN2QVZqipE8d148/Fs20bx0KmmGXV3WU6pZLwIiNZx44dtURKxp3mGFVs2PHMz3w5JOkK3tknZvvaZlrQh5FpV8v/befX0pRmURltxKFd9Q6dgrN6kxZdemzfgUu2wSMod6dm8Ch50zbOiQh2gp8NfQDOi9zhl17vaNbDOsg+pBTCZnRFr+eoALZK8e0K61hKugSfRP0fR8vavCEvTEVPgnv7PuS1m1jQ9pQ9zPdJICiVa/w7KkZiNt7wGlxsLQ==",
+  "signType": "RSA",
+  "alipayAppId": "2021006176658274",
+  "version": "1.0"
+}
