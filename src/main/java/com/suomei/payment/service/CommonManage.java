@@ -90,6 +90,11 @@ public class CommonManage {
             log.error("支付宝回调签名失败，map = {}",params);
             throw new ServiceException(ServiceErrorCode.CALL_BACK_SIGN_ERROR);
         }
+        String notifyUrl = partnerAlipayConfigs.getPartner().getNotifyUrl();
+        if(StringUtils.isBlank(notifyUrl)){
+            log.info("商家转账通知合作方，合作方通知地址为空。直接返回成功，不通知合作方。aliAppId={},platformAppId={}",aliAppId,partnerAlipayConfigs.getPlatformAppId());
+            return ConstantParams.channel_success_str;
+        }
         String bizContentJsonStr = params.get("biz_content");
         if(StringUtils.isNotBlank(bizContentJsonStr)){
             JSONObject bizContentJson = JSONObject.parseObject(bizContentJsonStr);
