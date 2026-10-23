@@ -6,11 +6,29 @@ Content-Type: application/json;charset=utf-8
 Accept: application/json
 
 {
-  "platformAppId": "SM20261018160002",
-  "signType": "RSA",
-  "alipayAppId": "9021000169679124",
+  "platformAppId": "SM20261018160001",
+  "outBizNo": "2026102312000006",
+  "bizScene": "DIRECT_TRANSFER",
+  "remark": "转账备注",
+  "alipayAppId": "2021006176658274",
   "version": "1.0",
-  "fileId": "59900014",
+  "transAmount": "0.6",
+  "transferSceneReportInfos": [
+    {
+      "infoType": "佣金报酬说明",
+      "infoContent": "9月家政服务报酬0.5"
+    }
+  ],
+  "productCode": "TRANS_ACCOUNT_NO_PWD",
+  "businessParams": "{\"payer_show_name_use_alias\":\"true\"}",
+  "payeeInfo": {
+    "identityType": "ALIPAY_LOGON_ID",
+    "identity": "7-9223352518",
+    "name": "MAKSIM IVANOV"
+  },
+  "signType": "RSA",
+  "orderTitle": "商家转账20261023120006",
+  "transferSceneName": "佣金报酬",
   "priKey": "{{partnerPriKey}}"
 }
 

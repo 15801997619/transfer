@@ -32,18 +32,18 @@ public class CallbackController {
     public String alipayTransfer(HttpServletRequest request){
         TraceLogUtils.beginTrace();
         Map<String, String> params = getParameterMap(request);
-        log.info("支付宝转账单据状态变更通知请求参数 {}",params);
+        log.info("########支付宝转账单据状态变更通知请求参数 {}",params);
         try {
             String respResult = commonManage.notifyPartner(params);
-            log.info("支付宝转账单据状态变更通知业务处理成功{}", respResult);
+            log.info("########支付宝转账单据状态变更通知业务处理完成{}", respResult);
             TraceLogUtils.endTrace();
             return respResult;
         } catch (ServiceException e) {
-            log.error("支付宝转账单据状态变更通知业务处理ServiceException ：{}"+e.getDetailMessage(),e);
+            log.error("########支付宝转账单据状态变更通知业务处理ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
             return ConstantParams.channel_fail_str;
         } catch (Exception e) {
-            log.error("支付宝转账单据状态变更通知业务处理Exception：", e);
+            log.error("########支付宝转账单据状态变更通知业务处理Exception：", e);
             TraceLogUtils.endTrace();
             return ConstantParams.channel_fail_str;
         }

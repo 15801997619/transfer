@@ -11,3 +11,56 @@ Accept: application/json
   "alipayAppId": "2021006176658274",
   "version": "1.0"
 }
+
+
+### 商家单笔转账(沙箱环境)
+
+POST {{host}}/openApi/uniTransfer
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160001",
+  "outBizNo": "2026102312000006",
+  "sign": "jSh1uKV2haMIZ1h5Yo987AtSkcckXUGqqMDYEVUVzZxLRHFjZRqKScobh+pfCBGwOilexSGqFefUskB1YyUaeSfLRJP1cwjmsIgIStJ5fi/gZq9d6nhKdD0old6SSFAU+bJXYo2XY7FI2BPMFi5SioZIL5z6kL11m3tCDLuGaXlxwI3Ebwm35k94Veu27O70T5dwqnVUDn3HbWj0/IgWP7PuCjIaoXGaKeOpoUjczkt5F3YTbUCqgyt6Ag4L3bITIHj8Tb8XybHWJ074Mi2V+HRmyJtfxfH6bY/0LwqPOQoJ2aJZnSNwx4+wLZkFiCvE4s1qLLx5DWdtGoqkexkt0g==",
+  "bizScene": "DIRECT_TRANSFER",
+  "remark": "转账备注",
+  "alipayAppId": "2021006176658274",
+  "version": "1.0",
+  "transAmount": "0.6",
+  "transferSceneReportInfos": [
+    {
+      "infoType": "佣金报酬说明",
+      "infoContent": "9月家政服务报酬0.5"
+    }
+  ],
+  "productCode": "TRANS_ACCOUNT_NO_PWD",
+  "businessParams": "{\"payer_show_name_use_alias\":\"true\"}",
+  "payeeInfo": {
+    "identityType": "ALIPAY_LOGON_ID",
+    "identity": "7-9223352518",
+    "name": "MAKSIM IVANOV"
+  },
+  "signType": "RSA",
+  "orderTitle": "商家转账20261023120006",
+  "transferSceneName": "佣金报酬"
+}
+
+### 转账订单查询(沙箱环境)
+
+POST {{host}}/openApi/queryTransferInfo
+Content-Type: application/json;charset=utf-8
+Accept: application/json
+
+{
+  "platformAppId": "SM20261018160001",
+  "productCode": "TRANS_ACCOUNT_NO_PWD",
+  "orderId": "20261023020070011530720003738198",
+  "outBizNo": "2026102115590001",
+  "sign": "A0OpajoRC22tfT3QapBA8eRqqBRl+n+MNC90rggaRPMJFRKuz5Dn5UREmNmqOpp/TPC8Fi5FyBAXM3t1BTbG3OLZDF7z+foMHa/9NBrPJfHr9aTh5lGl8ch6rkrnUSxNbU1KsZyAkClGNzscnnum6bml6vEt2NmS0VGOQhgRpdGRVoDcEcNvxn76vFXoKVhv64l1x/yeMsfB2vcifvkBmTClLeZxczFWY8RxvvoYKZ/k1iTJhhdYh0zGt+zWUbM3fzy6KjsRDyAf1dl+IIwD/PA0eRyp/KLoQyOzpt3hp7ag1zFgv4iWDwAkbi0k4S7HswzTwdrLdKAyyOYASX3qbQ==",
+  "bizScene": "DIRECT_TRANSFER",
+  "signType": "RSA",
+  "alipayAppId": "2021006176658274",
+  "payFundOrderId": "20261023020070011530720003738198",
+  "version": "1.0"
+}
