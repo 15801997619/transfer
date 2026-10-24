@@ -5,14 +5,12 @@ Content-Type: application/json;charset=utf-8
 Accept: application/json
 
 {
-  "platformAppId": "SM20261018160001",
-  "sign": "OOTeaVLtzVUP6b87vhKUJXg6DpjyVv7dSThQ71kwHogDaNGhqhSYLcKW27EgX9AREcUlCKqyUmAIHMLp/xSYhcgcN2QVZqipE8d148/Fs20bx0KmmGXV3WU6pZLwIiNZx44dtURKxp3mGFVs2PHMz3w5JOkK3tknZvvaZlrQh5FpV8v/befX0pRmURltxKFd9Q6dgrN6kxZdemzfgUu2wSMod6dm8Ch50zbOiQh2gp8NfQDOi9zhl17vaNbDOsg+pBTCZnRFr+eoALZK8e0K61hKugSfRP0fR8vavCEvTEVPgnv7PuS1m1jQ9pQ9zPdJICiVa/w7KkZiNt7wGlxsLQ==",
+  "platformAppId": "PR20261018160001",
+  "sign": "nFEShexXinSKlIcM5UJji+nWoc36Chd6RAhLrQgfkW8b2htchPNtEvj4/DmWtqMtSzVwIwNXPxwQMEdyvQPVn6uqhSdmgEPOdyT1dzx4+ZHnIKpcz9dCdlZ1QE9iiL6gGnhF87Ns7yFl8MS1myskekfLXp2uNNrbCsIH5BF3W0s5z2NS6TZFnOnRyYQxOiS80gzG3laCEXvylSOn/GaVSeW+q+DXQTwigFVT8cG4iJ5xgmyHCn/ukiGZYFJ0a0+7jXJq+5Ev3ickTTm4Mp9KkZQaKpiWE5rXAvihyCdZPOqxeiGkTxWPtGejalJvZGhK7QcdWeVIIC+sDjWPKGPPeA==",
   "signType": "RSA",
   "alipayAppId": "2021006176658274",
   "version": "1.0"
 }
-
-
 ### 商家单笔转账(沙箱环境)
 
 POST {{host}}/openApi/uniTransfer
