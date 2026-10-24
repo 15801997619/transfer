@@ -17,5 +17,6 @@ public class ConstantParams {
 	public static final String SECURE = "true";
 	public static final String channel_success_str = "success";
 	public static final String channel_fail_str = "fail";
+	public static final String PROD_PARTNER_APPID_PREFIX= "PR";
 
 }

@@ -45,7 +45,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.queryAccountInfo(partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("支付宝商家账户余额查询 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
@@ -70,7 +70,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.uniTransfer(reqDto,partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("商家单笔转账 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
@@ -95,7 +95,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.queryTransferInfo(reqDto,partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("转账订单查询 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
@@ -120,7 +120,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.applyEreceipt(reqDto,partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("申请电子回单 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
@@ -145,7 +145,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.queryEreceipt(reqDto,partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("电子回单状态查询 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();
@@ -171,7 +171,7 @@ public class OpenApiController {
         try {
             PartnerAlipayConfigs partnerAlipayConfigs = checkReqParam.checkPartnerReqParam(reqDto);
             JSONObject respData = transManage.queryBillDownloadUrl(reqDto,partnerAlipayConfigs);
-            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData));
+            return ResultUtils.toSuccess(respData, checkReqParam.sysSign(respData,partnerAlipayConfigs.getPlatformAppId()));
         } catch (ServiceException e) {
             log.error("查询对账单下载地址 ServiceException ：{}"+e.getDetailMessage(),e);
             TraceLogUtils.endTrace();

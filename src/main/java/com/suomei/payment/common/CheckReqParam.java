@@ -6,10 +6,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.suomei.payment.common.config.AccessPartnerProperties;
 import com.suomei.payment.common.config.AlipayConfigProperties;
 import com.suomei.payment.common.config.PartnerAlipayConfigs;
+import com.suomei.payment.common.constant.ConstantParams;
 import com.suomei.payment.common.exception.ServiceErrorCode;
 import com.suomei.payment.common.exception.ServiceException;
 import com.suomei.payment.common.utils.ChannelSignUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
@@ -33,10 +35,13 @@ public class CheckReqParam {
     @Resource
     private AccessPartnerProperties partnerProperties;
 
-    /** 系统签名私钥 */
+    /** 系统签名私钥 test */
     @Value("${resp.mer.rsa.sign.priKey}")
     private String sysMerSignPriKey;
 
+    /** 系统签名私钥 prod */
+    @Value("${resp.mer.pr.rsa.sign.priKey}")
+    private String sysMerPrSignPriKey;
 
     public PartnerAlipayConfigs checkPartnerReqParam(Object req) throws Exception {
         JSONObject reqJson = (JSONObject) JSON.toJSON(req);
@@ -96,8 +101,12 @@ public class CheckReqParam {
      * @return
      * @throws Exception
      */
-    public String sysSign(JSONObject respData) throws Exception {
-        return ChannelSignUtils.sysSign(respData,sysMerSignPriKey);
+    public String sysSign(JSONObject respData,String platformAppId) throws Exception {
+        String sysPriKey = sysMerSignPriKey;
+        if(StringUtils.isNotBlank(platformAppId) && platformAppId.startsWith(ConstantParams.PROD_PARTNER_APPID_PREFIX)){
+            sysPriKey = sysMerPrSignPriKey;
+        }
+        return ChannelSignUtils.sysSign(respData,sysPriKey);
     }
 
 }

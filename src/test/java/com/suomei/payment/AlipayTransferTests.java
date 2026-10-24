@@ -55,7 +55,7 @@ class AlipayTransferTests {
     private String merPriKey = "MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/ABaO+lBXsqpDjzyChV5Z3sXiNKZi5X2cONIpI9xP0duaFY/D2fbnPLeOUb/Nqpe4C7T3P2ju3ANZnaGS0HU7PDj48t8c/L/cwv0l+ZjxjGX5426Lzl8I78LOD4WJA8hXCr1FXNLHtrO6/ij6VIPgBWc1pvWYDdZANdkSHANN+5BT+7vnm95tDEZZejM4eohx2RDMO3EFthBaS8Lz62ioCbkQ1xzAsH0dUXryXeemNr9K8HCVFpqQ00V2IGsPNPubElruJ/f/PKtDBCIVO2RcZLM21MkF/LTUwpIVwQLbSzgsUweK9vxcGEGOsfepAutuyUqf99uQKrtl9Se+j8GDAgMBAAECggEBAKXOMccUzUIUO3JCmcjEdk+V8DqacgZQKma/fNFx7ALurrBoH1FpmcjLEJ1foh2sBeEjaIlqZnFUVSQqjuSgSeSONvcF/2FumC/QpWmd74Ng2fW/1WtQT3e2i2nOV6HFwtis3fmkxuXQWN3vXStSythiWGJe+bxx5pf/Jt1trAC47XiHijWmxa1SftuF3v+M+QFgmh6MfUiOelO944aoeTI3VdMsPxoQKBBZYzhBOjy1hi0hEi2U8PB8DokhE3dOsUup+TSdwXiAaHDCScDPyD5tYiQbWUWVtL77AptzAWQ/cbel8gQP+uLLIJ22HS3LV4hLe14aZRgzjClf4EUbO2ECgYEA3p4Z+bkAGOptzZKzpyA99WafaMc0LF8Ie32yh7PbnPURwxdcXqV92E5eRVkgHeBX3BoOsXzZbmjl3jPVqF5L/RrsB48JBkgg09/6AILJwCHIQZ6dcE5E2Ng8LnyemUsJvFu/tG+YsH7WUyD/82myWWXtddTg/UdysEsrNoe5mM8CgYEA26RBm+SOXYLxNmMTZEZCnptM09nffbikY5aiqo2+1jdnKJgven3V9RBQ4NDbNt/O7WcGuDUF+eVz16hP7G3WCdjslLbe6Y0y1wDuwua59PHQ1hgqHG9LdXFkxxqKQ00LMJU798nzJybdTTCFvncua5u8MMLbGOCORBp29Zn+0Q0CgYAdWvfN6ElM/8zO6ONrzGKfM5Mdu/bzSuzRa/fY0SzKe76F3VS+3k/D8EGaH3COwACV85GwcegyGP8G2Ar6ksSucZhiPshP3b8GcWiEHLsB7PJ9RK86GfgWKB13e9NmH3D/N5IF9xlJXNBiUd2ueWedRkWT3ih0/bDv8lmWbTtaHQKBgQCBv//OEu+TCDZsdYzQEL1sKrvw7mUbRMc/2Y3QiRmyPFphXb22c73AHlpY5KiLOx1nmxQaH6CfJlAPlutX9O6bNJ1VoM4AVBwzbOafFmPF8k/3GaFO2ORPxaPOBryk00+H7LDXSWKtv0S+Q6rOgGNYyFAc0g9SG92PF78siUNBxQKBgQCWMMk6OnNA2+lLGHnC8I5PQkdgjXjChEHV+agMPv6DMAIgyhN4LzbLUZVuYjqHqZWM+SHYzH2gAP8zKP63cy00yXPmm2Vd3JnBYtCykBi6rFzYkX1/hNlmUKyFHOb+4BJ/8siTl1vC1Gc7VivrhbSxvauq7xreH/5F9dHiUdi+xg==";
     /** 对接秘钥>>商户验签公钥（平台生成，提供给商户） */
     private String platformPubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlmkDOMzThja0KkFVRTTdEqnB1g1/8YjF1PW6VWWMtwbZhAY5jorf4bFjrlaFfeyjadGAZ9EGecx5akja8Wv674pxNmPNAW0HxdKNJ7gwNbn/9HiNh2FOT24olTYtNMEKXLR220HqpTLT+lbOiOcMHvf33Y/LaqgXpy4WABWHWH618hcMBbgm8rOJLD3/HWmQ/hqGgyQcm52ZbH7gCvHS3rukgDTeSxBfDGUFQEhF7qdVZNfA5IoIkRv4ni1ZytGnARScZJrmvyd/GzgQOznChaz97tGprFQPty7UirlQQfbEEUucdeVmUqC+rEoXpAL4pld4OuyIHbllJFqSxdEeWwIDAQAB";
-
+    private String platformPubKey1 ="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlJ4xBAg70CB7JdumePznRerzSif14bvoAVaSHuP49a1nrZ5f5h6RYwrcvWcIAywwcbOsn8hUlqayyRkjA+865uUGi/tCH+Tt99F7fGiXYXIh4SUNcPkTXqnepPS28A3UyNAH5zIcLI0Obg8h66Q/0zVW3ghtrIl/er3XORYqnuyE5lSxXb62EdfxZ9Ssq+GjnOKTg/Y1Nn9RJ252bKGBqQJ/zOLpHNVBZxNkZkwZGmZc3Uv3k/5fL+rb94gj/Pcgy18DRiB+9osnoIyAm7Gvhu+jLD0dOE0HUxcgWvrH9p1oMPuUal1K70Agg0Ky6IK8k8HarL6q44oqZBDcOkyZqwIDAQAB";
 
 
     /**
@@ -154,7 +154,42 @@ class AlipayTransferTests {
         }
     }
 
-
+    /**
+     * 支付宝商家账户余额查询
+     */
+    @Test
+    void testQueryAccountInfo1() throws Exception {
+        //1.组装请参
+        String jsonBody = "{\n" +
+                "  \"platformAppId\": \"PR20261018160002\",\n" +
+                "  \"signType\": \"RSA\",\n" +
+                "  \"alipayAppId\": \"9021000169679124\",\n" +
+                "  \"version\": \"1.0\"\n" +
+                "}";
+        //2.接口请参签名
+        log.info("加签明文:\n{}", jsonBody);
+        String sign = SignUtils.sortAndRsaSign(jsonBody, merPriKey);
+        JSONObject reqData = JSONObject.parseObject(jsonBody);
+        reqData.put("sign", sign);
+        //3.模拟post请求
+        MvcResult result = mockMvc.perform(post("/openApi/queryAccountInfo")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .accept(MediaType.APPLICATION_JSON_UTF8)
+                        .content(reqData.toJSONString()))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_UTF8))
+                .andReturn();
+        //4.响应参数惨胡
+        String responseBody = result.getResponse().getContentAsString();
+        int status = result.getResponse().getStatus();
+        log.info("响应状态码:{}，响应体 JSON: {}" ,status,responseBody);
+        JSONObject respBodyData = JSONObject.parseObject(responseBody);
+        String respDataStr = respBodyData.getString("respObj");
+        String reqSign = respBodyData.getString("sign");
+        //5.接口返参验签
+        if(StringUtils.isNotBlank(respDataStr)){
+            validateRsaSign(respDataStr,reqSign,platformPubKey1);
+        }
+    }
 
     /**
      * 商家单笔转账

@@ -119,14 +119,14 @@ public class CommonManage {
             notifyDto.setAlipayAppId(partnerAlipayConfigs.getAlipayAccount().getAppId());
             notifyDto.setSignType(ConstantParams.SIGN_TYPE);
             //通知合作方
-            return notifyMer((JSONObject) JSON.toJSON(notifyDto),partnerAlipayConfigs.getPartner().getNotifyUrl());
+            return notifyMer((JSONObject) JSON.toJSON(notifyDto),partnerAlipayConfigs.getPartner().getNotifyUrl(),partnerAlipayConfigs.getPlatformAppId());
         }
         return ConstantParams.channel_fail_str;
     }
 
-    private String notifyMer(JSONObject notifyJson,String notifyUrl) throws Exception {
+    private String notifyMer(JSONObject notifyJson,String notifyUrl,String platformAppId) throws Exception {
         //对后台通知交互时，如果平台收到的应答不是JSON字符串{"code":"0000","msg":"成功"}，平台认为通知失败
-        String partnerSign = checkReqParam.sysSign((JSONObject) JSON.toJSON(notifyJson));
+        String partnerSign = checkReqParam.sysSign((JSONObject) JSON.toJSON(notifyJson),platformAppId);
         notifyJson.put("sign",partnerSign);
         log.info("notifyPartner notifyUrl = {},reqData = {}",notifyUrl,notifyJson.toJSONString());
         String respDataStr = HttpUtils.send(notifyUrl,notifyJson.toJSONString());
